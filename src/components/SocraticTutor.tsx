@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, Sparkles, RefreshCw, MessageSquareQuote, HelpCircle, AlertCircle } from 'lucide-react';
 import { ChatMessage } from '../types';
+import { MathMarkdown } from './MathMarkdown';
 
 const INITIAL_MESSAGES: ChatMessage[] = [
   {
@@ -195,9 +196,9 @@ Intenta decirme qué ocurre con el denominador cuando $r \\approx 1$ o cuando $r
                       : 'bg-slate-50 text-slate-800 border border-slate-200 rounded-tl-none'
                   }`}
                 >
-                  <div className="whitespace-pre-wrap">{msg.content}</div>
+                  <MathMarkdown content={msg.content} isUser={isUser} />
                   <div
-                    className={`text-[10px] mt-1.5 font-medium ${
+                    className={`text-[10px] mt-2 font-medium ${
                       isUser ? 'text-blue-200 text-right' : 'text-slate-400 text-left'
                     }`}
                   >
