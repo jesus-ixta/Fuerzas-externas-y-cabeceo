@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #F8FAFC;
+    color: #1E293B;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  header,
+  footer,
+  .no-print,
+  button,
+  nav {
+    display: none !important;
+  }
+
+  #certificate-print-area {
+    border: 6px double #334155 !important;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    padding: 2.5rem !important;
+    page-break-inside: avoid !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  @page {
+    size: landscape;
+    margin: 1cm;
+  }
+}
